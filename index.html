@@ -88,6 +88,159 @@
             width: 100%;
         }
     }
+    
+    .heading-center {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 24px;
+    font-weight: bold;
+    padding: 70px;
+}
+
+.card123 ul {
+    list-style-type: disc;
+    padding-left: 20px;
+    text-align: left;
+}
+
+.card123 ul li {
+    margin-bottom: 10px;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+.card123 ul li strong {
+    color: #007bff; /* Optional: style for the bold headings */
+}
+
+
+
+.card123 h3 {
+    display: inline-block;
+    position: relative;
+    padding-bottom: 5px; /* Adds space for the underline */
+}
+
+.card123 h3::after {
+    content: '';
+    display: block;
+    width: 50%; /* Adjust the width of the underline */
+    height: 2px; /* Thickness of the underline */
+    background-color: #007bff; /* Color of the underline */
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}
+
+
+.card123 h3 {
+    position: relative;
+    display: inline-block;
+    padding-bottom: 10px; /* Space for the small underline */
+}
+
+.card123 h3::after {
+    content: '';
+    display: block;
+    width: 100%; /* Full width of the heading */
+    height: 2px; /* Thickness of the underline */
+    background-color: #007bff; /* Color of the underline */
+    position: absolute;
+    left: 0;
+    bottom: 0; /* Position at the bottom of the heading */
+}
+
+.card123 {
+    border-bottom: 2px solid #007bff; /* Full-width underline for the card */
+    padding-bottom: 20px; /* Add space at the bottom of the card */
+}
+
+
+.heading-center {
+    position: relative;
+    margin-bottom: 20px;
+    font-size: 24px;
+    font-weight: bold;
+    overflow: hidden; /* Ensures that the underline animation stays within the container */
+}
+
+.heading-center::after {
+    content: '';
+    display: block;
+    width: 0; /* Initially hidden */
+    height: 2px; /* Thickness of the underline */
+    background-color: #007bff; /* Color of the underline */
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%); /* Center the underline */
+    animation: underline-appear 1s ease forwards; /* Trigger the animation */
+}
+
+/* Define the animation */
+@keyframes underline-appear {
+    0% {
+        width: 0; /* Start with no underline */
+        left: 50%; /* Start in the middle */
+    }
+    100% {
+        width: 20%; /* Final underline width */
+        left: 50%; /* Keep it centered */
+    }
+}
+
+
+.card123 h3 {
+    transition: all 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.card123 h3:hover {
+    color: #007bff; /* Change text color on hover */
+    transform: scale(1.05); /* Slightly enlarge the heading on hover */
+    text-decoration: none; /* Optional: underline on hover */
+}
+
+
+
+
+
+
+.card123 {
+    transition: background-color 0.3s ease; /* Smooth transition for background color */
+}
+
+.card123 h3 {
+    transition: color 0.3s ease, transform 0.3s ease; /* Smooth transition for heading color and scale */
+}
+
+.card123 h3:hover {
+    color: #007bff; /* Change heading color on hover */
+    transform: scale(1.05); /* Slightly enlarge the heading on hover */
+    text-decoration: underline; /* Optional: underline on hover */
+}
+
+.card123:hover {
+    background-color: #f0f8ff; /* Change card color on hover */
+}
+
+
+
+.card-link {
+    text-decoration: none;
+    color: inherit; /* Ensures the card’s text doesn't change color */
+    display: block; /* Makes the anchor tag behave like a block element */
+}
+
+.card123 {
+    cursor: pointer; /* Changes the cursor to pointer */
+    transition: background-color 0.3s ease;
+}
+
+.card123:hover {
+    background-color: #c9e6f1; /* Sky blue color on hover */
+}
+
+
 </style>
 </head>
 <body>
@@ -129,7 +282,7 @@
                                                 <li><a href="elements.html">Element</a></li>
                                             </ul> -->
                                         </li>
-                                        <li><a href="services.html">Services</a></li>
+                                        <li><a href="blog_details.html">Services</a></li>
                                         <!-- <li><a href="blog.html">Blog</a>
                                             <ul class="submenu">
                                                 <li><a href="blog.html">Blog</a></li>
@@ -165,14 +318,46 @@
             <!-- Single Slider -->
             <div class="single-slider">
                 <div class="slider-cap-wrapper">
-                    <div class="hero-caption">
+                    <style>
+                        .hero-caption {
+                          opacity: 0;
+                          transform: translateY(100px); /* Start slightly below */
+                          animation: flyIn 1.5s ease-out forwards;
+                        }
+                      
+                        /* Flying effect animation */
+                        @keyframes flyIn {
+                          0% {
+                            opacity: 0;
+                            transform: translateY(100px); /* Offscreen */
+                          }
+                          100% {
+                            opacity: 1;
+                            transform: translateY(0); /* In position */
+                          }
+                        }
+                      
+                        /* Delay for individual elements */
+                        .hero-caption h1 {
+                          animation: flyIn 1.5s ease-out 0.4s forwards;
+                        }
+                      
+                        .hero-caption p {
+                          animation: flyIn 1.5s ease-out 0.6s forwards;
+                        }
+                      
+                        .hero-caption .header-btn {
+                          animation: flyIn 1.5s ease-out 0.9s forwards;
+                        }
+                      </style>
+                      
+                      <div class="hero-caption">
                         <span>Best Service</span>
-                        <h1 data-animation="fadeInLeft" data-delay=".4s">Welcome to Gia Management</h1>
-                        <p data-animation="fadeInLeft" data-delay=".6s">Transforming Visions into Reality with Innovative Solutions that Drive Impact</p>
-                        <!-- Hero Btn -->
+                        <h1>Welcome to Gia Management</h1>
+                        <p>Transforming Visions into Reality with Innovative Solutions that Drive Impact</p>
                         <a href="services.html" class="header-btn" style="background-color: blue; color: aliceblue;">Explore services</a>
-                        <!-- <a href="#" class="btn"  data-animation="fadeInLeft" data-delay=".9s"   >Explore Services  </a> -->
-                    </div>
+                      </div>
+                      
                     <div class="hero-img">
                         <img src="assets/img/hero/young-coworkers-with-documents-table.jpg" alt=""  data-animation="fadeInRight" data-transition-duration="5s">
                     </div>
@@ -242,6 +427,8 @@
         </div>
     </section> -->
     <!--Services Area End -->
+
+   
     <!--! About Area Start 01 -->
     <section class="about-area fix">
         <!--Right Contents  -->
@@ -256,7 +443,7 @@
                     <h2>About Us</h2>
                 </div>
                 <div class="about-more">
-                    <p>At Gia Management, we excel in transforming innovative ideas into thriving businesses while helping established companies achieve new heights through tailored consulting services that enhance operational efficiency, guide strategic decisions, and provide actionable financial insights. Our highly experienced team collaborates closely with clients to thoroughly understand their vision and challenges, identifying growth opportunities, streamlining operations, and developing innovative strategies that ensure long-term success in an increasingly competitive and ever-evolving market landscape. We take pride in delivering personalized, results-oriented solutions that not only address immediate business needs but also build a solid foundation for sustainable performance, scalability, and value creation, empowering businesses to remain agile and competitive in the face of constant change.</p>
+                    <p>At Gia Management, we excel in transforming innovative ideas into thriving businesses while helping established companies achieve new heights through tailored consulting services that enhance operational efficiency, guide strategic decisions, and provide actionable financial insights. Our highly experienced team collaborates closely with clients to thoroughly understand their vision and challenges, identifying growth opportunities, streamlining operations, and developing innovative strategies that ensure long-term success in an increasingly competitive and ever-evolving market landscape. </p>
                     <p class="pera-bottom">Empowering both startups and established enterprises to reach their full potential, we help drive sustainable growth, foster a culture of continuous innovation, and unlock new opportunities for long-term success.</p>
                      
                     <div class="footer-tittles">
@@ -355,6 +542,69 @@
         </div>
     </div>
     <!-- About Area End-->
+
+
+
+
+    <h2 class="heading-center" >What We Offer</h2>
+    <div class="container123">
+        
+        <!-- Card 1 -->
+        <a href="services.html" class="card-link"></a>
+        <div class="card123">
+          <a href="services.html">  <h3>Startups</h3> </a>
+          <!-- <p style="color: #0056b3;"> <strong> Transform your idea into a successful business with streamlined operations, scalable strategies, and financial planning </strong></p> -->
+            <ul>
+                <li><strong>Idea to Business:</strong> Turn your concept into <br> a real, viable business.</li>
+                <li><strong>Business Structure:</strong> Set up the right <br> processes for growth.</li>
+                <li><strong>Operational Efficiency:</strong> Streamline your operations <br> from the start.</li>
+                <li><strong>Scaling:</strong> Expand your startup with <br> clear strategies.</li>
+                <li><strong>Financial Modeling:</strong> Plan for the future <br> with accurate forecasts.</li>
+            </ul>
+            <!-- <button>Know More</button> -->
+        </div>
+        
+        
+    
+        <!-- Card 2 -->
+        <a href="services.html" class="card-link"></a>
+        <div class="card123">
+         <a href="services.html">  <h3>Established Firms</h3></a> 
+         <!-- <p style="color: #0056b3;"><strong>Enhance efficiency, forecast growth, and explore new markets to expand your established business successfully<strong></p> -->
+            <ul>
+                <li><strong>Operational Improvement:</strong> Fine-tune your existing <br> processes for better efficiency.</li>
+                <li><strong>Financial Forecasting:</strong> Plan for sustainable growth <br> with precise projections.</li>
+                <li><strong>Expansion Strategy:</strong> Identify new markets and <br> opportunities to grow.</li>
+            </ul>
+            <!-- <button>Know More</button> -->
+        </div>
+        
+    </div>
+    
+
+
+
+    <section class="wantToWork-area section-bg2"  data-background="assets/img/gallery/section_bg01.png" style="">
+        <div class="container">
+            <div class="wants-wrapper w-padding2">
+                <div class="row align-items-center justify-content-between">
+                    <div class="col-xl-7 col-lg-7 col-md-12">
+                        <div class="wantToWork-caption wantToWork-caption2">
+                            <h2>Need a consulting services?</h2>
+                            <p>The automated process starts as soon as your clothes go into the machine. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla.</p>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-lg-4 col-md-6">
+                        <a href="contact.html" class="header-btn" style="background-color: blue; color: aliceblue;">Make an Appointment</a>
+                        <!-- <a href="#" class="btn w-btn wantToWork-btn mr-20" style="background-color: blue;">Make an Appointment</a> -->
+                        <a href="#" class="btn2 w-btn wantToWork-btn"><i class="fas fa-phone"></i> (89) 673 378-309</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
     <!--? Testimonial Area Start -->
     <section class="testimonial-area testimonial-padding fix" data-background="assets/img/blueblue.jpeg">
         <div class="container">
@@ -366,17 +616,20 @@
                             <!-- Single Testimonial -->
                             <div class="single-testimonial position-relative">
                                 <div class="testimonial-caption">
-                                    <img src="assets/img/icon/quotes-sign.png" alt="" class="quotes-sign">
-                                    <p>Brook presents your services with flexible, convenient and cdpose layouts. You can select your favorite layouts & elements for cular ts with unlimited ustomization possibilities. Pixel-perfect replica;ition of thei designers ijtls intended csents your se.</p>
+                                    <img src="assets/img/t" alt="" class="quotes-sign">
+                                    <p>&quot;Gia Management guided us through the development of our automated tax solution,
+                                        providing valuable insights along the way. Their understanding of the Jordanian market
+                                        helped us gain recognition from the Central bank and income and sales tax departments
+                                        in Jordan.&quot;</p>
                                 </div>
                                 <!-- founder -->
                                 <div class="testimonial-founder d-flex align-items-center">
                                     <div class="founder-img">
-                                        <img src="assets/img/icon/testimonial.png" alt="">
+                                        <img src="assets/img/testimonials/mohammad malhas (1).png" alt="" style="height: 100px;">
                                     </div>
                                     <div class="founder-text">
-                                        <span>Robart Brown</span>
-                                        <p>Creative designer at Colorlib</p>
+                                        <span>Marwan Mohd</span>
+                                        <p>CEO, Smart Bills</p>
                                     </div>
                                 </div>
                             </div>
@@ -384,19 +637,83 @@
                             <div class="single-testimonial position-relative">
                                 <div class="testimonial-caption">
                                     <img src="assets/img/icon/quotes-sign.png" alt="" class="quotes-sign">
-                                    <p>Brook presents your services with flexible, convenient and cdpose layouts. You can select your favorite layouts & elements for cular ts with unlimited ustomization possibilities. Pixel-perfect replica;ition of thei designers ijtls intended csents your se.</p>
+                                    <p>&quot;The team at Gia Management was instrumental in helping us shape our pharmaceutical
+                                        tracking system. Their support helped us secure pre-seed investment and gain momentum
+                                        in our industry.&quot;
+                                        </p>
                                 </div>
                                 <!-- founder -->
                                 <div class="testimonial-founder d-flex align-items-center">
                                     <div class="founder-img">
-                                        <img src="assets/img/icon/testimonial.png" alt="">
+                                        <img src="assets/img/testimonials/ahmad nabil (1).png" alt="" style="height: 100px;">
                                     </div>
                                     <div class="founder-text">
-                                        <span>Robart Brown</span>
-                                        <p>Creative designer at Colorlib</p>
+                                        <span>Ahmad Nabil</span>
+                                        <p>Founder, Smart Dust Technologies</p>
                                     </div>
                                 </div>
                             </div>
+
+                            <div class="single-testimonial position-relative">
+                                <div class="testimonial-caption">
+                                    <img src="assets/img/icon/quotes-sign.png" alt="" class="quotes-sign">
+                                    <p>&quot;Gia Management delivered financial projections and feasibility studies that gave our
+                                        clients the tools to make informed decisions. Their input was professional and reliable.&quot;
+                                        </p>
+                                </div>
+                                <!-- founder -->
+                                <div class="testimonial-founder d-flex align-items-center">
+                                    <div class="founder-img">
+                                        <img src="assets/img/testimonials/Ahmad Shaqran (1).png" alt="" style="height: 100px;">
+                                    </div>
+                                    <div class="founder-text">
+                                        <span>Ahmad Shaqran</span>
+                                        <p>Managing Director, Legend Brokers</p>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="single-testimonial position-relative">
+                                <div class="testimonial-caption">
+                                    <img src="assets/img/icon/quotes-sign.png" alt="" class="quotes-sign">
+                                    <p>&&quot;Gia Management&#39;s assistance with DEWA certification and navigating the renewable
+                                        energy market was invaluable. They helped us establish key partnerships that have been
+                                        critical for our growth.&quot;
+                                        </p>
+                                </div>
+                                <!-- founder -->
+                                <div class="testimonial-founder d-flex align-items-center">
+                                    <div class="founder-img">
+                                        <img src="assets/img/testimonials/Ajmal Kasim (1).png" alt="" style="height: 100px;">
+                                    </div>
+                                    <div class="founder-text">
+                                        <span>Ajmal</span>
+                                        <p>Business Developer, Recom Solar Trading LLC</p>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="single-testimonial position-relative">
+                                <div class="testimonial-caption">
+                                    <img src="assets/img/icon/quotes-sign.png" alt="" class="quotes-sign">
+                                    <p>&quot;Gia Management provided detailed financial models that helped guide our investment
+                                        decisions in renewable energy. Their expertise added clarity to complex decisions.&quot;
+                                        </p>
+                                </div>
+                                <!-- founder -->
+                                <div class="testimonial-founder d-flex align-items-center">
+                                    <div class="founder-img">
+                                        <img src="assets/img/testimonials/Murad (1).png" alt="" style="height: 100px;">
+                                    </div>
+                                    <div class="founder-text">
+                                        <span>Murad Shaqran</span>
+                                        <p>Accounts Manager, Enrocks Investments LLC</p>
+                                    </div>
+                                </div>
+                            </div>
+
                         </div>
                         <!-- Testimonial End -->
                     </div>
@@ -531,21 +848,7 @@
 
 
 
-<div class="container123">
-    <!-- Card 1 -->
-    <div class="card123">
-        <h3>Service 1</h3>
-        <p>We offer a range of services to help you achieve your goals effectively.</p>
-        <button>Know More</button>
-    </div>
 
-    <!-- Card 2 -->
-    <div class="card123">
-        <h3>Service 2</h3>
-        <p>Our expertise ensures that you get the best solutions for your business needs.</p>
-        <button>Know More</button>
-    </div>
-</div>
 
     </div>
     <!-- Office environment  End-->
@@ -647,25 +950,7 @@
     </section>
     <!-- Team Ara End -->
     <!--? Want To work -->
-    <section class="wantToWork-area section-bg2"  data-background="assets/img/gallery/section_bg01.png">
-        <div class="container">
-            <div class="wants-wrapper w-padding2">
-                <div class="row align-items-center justify-content-between">
-                    <div class="col-xl-7 col-lg-7 col-md-12">
-                        <div class="wantToWork-caption wantToWork-caption2">
-                            <h2>Need a consulting services?</h2>
-                            <p>The automated process starts as soon as your clothes go into the machine. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla.</p>
-                        </div>
-                    </div>
-                    <div class="col-xl-4 col-lg-4 col-md-6">
-                        <a href="contact.html" class="header-btn" style="background-color: blue; color: aliceblue;">Make an Appointment</a>
-                        <!-- <a href="#" class="btn w-btn wantToWork-btn mr-20" style="background-color: blue;">Make an Appointment</a> -->
-                        <a href="#" class="btn2 w-btn wantToWork-btn"><i class="fas fa-phone"></i> (89) 673 378-309</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+   
     <!-- Want To work End -->
 </main>
 <footer>
@@ -683,7 +968,15 @@
                                 </div>
                                 <div class="footer-tittle">
                                     <div class="footer-pera">
-                                        <p>The automated process starts as soon as your clothes go into the machine.</p>
+                                        <p>"Empowering businesses with expert strategies for growth, innovation, and lasting success."
+
+
+
+
+
+
+
+                                        </p>
                                     </div>
                                 </div>
                                 <!-- social -->
@@ -698,13 +991,13 @@
                     <div class="col-xl-2 col-lg-4 col-md-4 col-sm-6">
                         <div class="single-footer-caption mb-50">
                             <div class="footer-tittle">
-                                <h4>Our solutions</h4>
+                                <h4>Our services</h4>
                                 <ul>
-                                    <li><a href="#">Design & creatives</a></li>
-                                    <li><a href="#">Telecommunication</a></li>
-                                    <li><a href="#">Restaurant</a></li>
-                                    <li><a href="#">Programing</a></li>
-                                    <li><a href="#">Architecture</a></li>
+                                    <li><a href="blog_details.html">Business Consulting</a></li>
+                                    <li><a href="blog_details.html">Startup Development</a></li>
+                                    <li><a href="blog_details.html">Strategic Planning </a></li>
+                                    <li><a href="blog_details.html">Operational Efficiency</a></li>
+                                    <li><a href="blog_details.html">Financial Advisory</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -728,7 +1021,7 @@
                             <div class="footer-tittle">
                                 <h4>Contact us</h4>
                                 <ul>
-                                    <li><a href="#">consulto98@gmail.com</a></li>
+                                    <li><a href="#">info@Giamn.com</a></li>
                                     <li><a href="#">76/A, Green road, NYC</a></li>
                                     <li class="number"><a href="#">(80) 783 367-3904</a></li>
                                 </ul>
